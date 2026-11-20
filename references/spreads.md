@@ -1,3 +1,3 @@
-# 牌阵
+# Spreads
 
-`single` 当前指引。`three` 过去/现在/未来，可改读你/对方/关系或情况/行动/结果。`diamond` 核心/根源/阻力/潜力/建议。`moon` 新月意图、上弦行动、满月觉察、下弦释放。`horseshoe` 远期过去/近期过去/当前/近期未来/外部影响/建议/结果。`celtic` 核心/交叉/意识目标/根基过去/近期过去/近期未来/自我/环境/希望与恐惧/结果。
+`single` current guidance. `three` past/present/future; can also be read as you/them/relationship or situation/action/outcome. `diamond` core/root/resistance/potential/advice. `moon` new moon intention, first quarter action, full moon awareness, last quarter release. `horseshoe` distant past/recent past/present/near future/external influences/advice/outcome. `celtic` core/crossing/conscious goal/foundation (past)/recent past/near future/self/environment/hopes and fears/outcome.

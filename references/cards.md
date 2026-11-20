@@ -1,7 +1,7 @@
-# 牌义纪律
+# Card Meaning Discipline
 
-花色：权杖火=行动/创造；圣杯水=情感/关系；宝剑风=思维/冲突；星币土=身体/金钱/技能。
+Suits: Wands (Fire) = action/creativity; Cups (Water) = emotion/relationships; Swords (Air) = thought/conflict; Pentacles (Earth) = body/money/skills.
 
-数字：Ace 种子，2 选择，3 初果，4 稳定/停滞，5 冲突，6 恢复，7 考验，8 加速/精进，9 临完成，10 完成/过载。宫廷：侍从学习，骑士行动，皇后滋养，国王掌控。
+Numbers: Ace seed, 2 choice, 3 first fruits, 4 stability/stagnation, 5 conflict, 6 recovery, 7 test, 8 acceleration/mastery, 9 nearing completion, 10 completion/overload. Court: Page learning, Knight action, Queen nurturing, King mastery.
 
-大阿卡纳按愚人之旅读：0-7 建身份；8-14 内在修正；15-21 阴影、崩塌、疗愈、整合。逆位按牌位读成阻塞、过度、内化、延迟或反转。
+Read the Major Arcana as the Fool's Journey: 0-7 building identity; 8-14 inner correction; 15-21 shadow, collapse, healing, integration. Read reversals by position as blockage, excess, internalization, delay, or inversion.

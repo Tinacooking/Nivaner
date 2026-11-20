@@ -1,36 +1,69 @@
 #!/usr/bin/env python3
-"""塔罗抽牌：加权、无重复、可复现 JSON。"""
+"""Tarot draw: weighted, no duplicates, reproducible JSON."""
 
-import argparse, hashlib, json, os, random, time
+import argparse
+import hashlib
+import json
+import os
+import random
+import time
 from datetime import datetime
 
 MAJORS = (
-    "愚者 魔术师 女祭司 女皇 皇帝 教皇 恋人 战车 力量 隐士 命运之轮 正义 "
-    "倒吊人 死神 节制 恶魔 高塔 星星 月亮 太阳 审判 世界"
-).split()
-SUITS = {"权杖": "火", "圣杯": "水", "宝剑": "风", "星币": "土"}
-RANKS = "Ace 二 三 四 五 六 七 八 九 十 侍从 骑士 皇后 国王".split()
-MINORS = [f"{s}{r}" for s in SUITS for r in RANKS]
-ELEMENTS = dict(zip(MAJORS, "风 风 水 土 火 土 风 水 火 土 火 风 水 水 火 土 火 风 水 火 火 土".split()))
-ELEMENTS.update({c: SUITS[c[:2]] for c in MINORS})
-CARDS = MAJORS + MINORS
+    "The Fool",
+    "The Magician",
+    "The High Priestess",
+    "The Empress",
+    "The Emperor",
+    "The Hierophant",
+    "The Lovers",
+    "The Chariot",
+    "Strength",
+    "The Hermit",
+    "Wheel of Fortune",
+    "Justice",
+    "The Hanged Man",
+    "Death",
+    "Temperance",
+    "The Devil",
+    "The Tower",
+    "The Star",
+    "The Moon",
+    "The Sun",
+    "Judgement",
+    "The World",
+)
+SUITS = {"Wands": "Fire", "Cups": "Water", "Swords": "Air", "Pentacles": "Earth"}
+RANKS = "Ace Two Three Four Five Six Seven Eight Nine Ten Page Knight Queen King".split()
+MINORS = [f"{r} of {s}" for s in SUITS for r in RANKS]
+MAJOR_ELEMENTS = "Air Air Water Earth Fire Earth Air Water Fire Earth Fire Air Water Water Fire Earth Fire Air Water Fire Fire Earth".split()
+ELEMENTS = dict(zip(MAJORS, MAJOR_ELEMENTS))
+ELEMENTS.update(
+    {
+        card: element
+        for suit, element in SUITS.items()
+        for card in MINORS
+        if card.endswith(f" of {suit}")
+    }
+)
+CARDS = list(MAJORS) + MINORS
 
 SPREADS = {
-    "single": ("单张牌", "当前指引,1,0"),
-    "three": ("三牌阵", "过去,0,0|现在,1,0|未来,0,1"),
-    "diamond": ("五牌阵", "核心,1,0|根源,0,0|阻力,0,0|潜力,0,0|建议,1,1"),
-    "moon": ("月亮牌阵", "新月,1,0|上弦,0,0|满月,1,0|下弦,0,0"),
+    "single": ("Single Card", "Current Guidance,1,0"),
+    "three": ("Three-Card Spread", "Past,0,0|Present,1,0|Future,0,1"),
+    "diamond": ("Five-Card Spread", "Core,1,0|Root,0,0|Resistance,0,0|Potential,0,0|Advice,1,1"),
+    "moon": ("Moon Spread", "New Moon,1,0|First Quarter,0,0|Full Moon,1,0|Last Quarter,0,0"),
     "horseshoe": (
-        "马蹄形",
-        "远期过去,0,0|近期过去,0,0|当前,1,0|近期未来,0,0|外部影响,1,0|建议,0,1|结果,1,1",
+        "Horseshoe",
+        "Distant Past,0,0|Recent Past,0,0|Present,1,0|Near Future,0,0|External Influences,1,0|Advice,0,1|Outcome,1,1",
     ),
     "celtic": (
-        "凯尔特十字",
-        "核心,1,0|交叉,0,0|意识目标,0,0|根基过去,0,0|近期过去,1,0|近期未来,0,0|"
-        "自我,0,0|环境,0,0|希望与恐惧,0,0|结果,1,1",
+        "Celtic Cross",
+        "Core,1,0|Crossing,0,0|Conscious Goal,0,0|Foundation (Past),0,0|Recent Past,1,0|Near Future,0,0|"
+        "Self,0,0|Environment,0,0|Hopes and Fears,0,0|Outcome,1,1",
     ),
 }
-TIME = {"morning": ("火", "风"), "afternoon": ("水", "土"), "night": ("major",)}
+TIME = {"morning": ("Fire", "Air"), "afternoon": ("Water", "Earth"), "night": ("major",)}
 
 
 def make_seed(question=""):
@@ -62,7 +95,7 @@ def draw_cards(spread_key, question="", seed=None, time_factor=None):
         card = {
             "position": name,
             "card": picked,
-            "orientation": "正位" if rng.random() < (0.7 if int(upright) else 0.6) else "逆位",
+            "orientation": "Upright" if rng.random() < (0.7 if int(upright) else 0.6) else "Reversed",
             "is_major": picked in MAJORS,
         }
         cards.append(card)
@@ -77,12 +110,11 @@ def draw_cards(spread_key, question="", seed=None, time_factor=None):
 
 
 def main():
-    parser = argparse.ArgumentParser(description="塔罗牌抽牌脚本")
+    parser = argparse.ArgumentParser(description="Tarot card draw script")
     parser.add_argument("--spread", required=True, choices=SPREADS)
     parser.add_argument("--question", default="")
     parser.add_argument("--seed", type=int)
     parser.add_argument("--time-factor", choices=TIME)
-    parser.add_argument("--json-only", action="store_true", help=argparse.SUPPRESS)
     args = parser.parse_args()
     print(json.dumps(draw_cards(args.spread, args.question, args.seed, args.time_factor), ensure_ascii=False, indent=2))
 

@@ -1,7 +1,7 @@
-# 牌间关系
+# Inter-Card Relations
 
-模型：因果、对话、递进、转折。
+Models: cause/effect, dialogue, progression, turn.
 
-来源：A1 大阿卡纳愚人之旅，上升=推进，倒序=补课，同阶段=强化，跨幕=跨度大。A2 同花色数字旅程，小到大=推进，大到小=重启，围绕 5=危机。A3 牌性：火风互助，水土互助，火水蒸发，风土僵化，火土需落地，水风易情绪化思考。B1 大牌编号和为 21=镜像张力。B2 宫廷牌=角色，另一张=事件。B3 同数字不同花色=阶段共振。
+Sources: A1 Major Arcana Fool's Journey: ascending = advancing, descending = catching up, same stage = reinforcement, crossing acts = large leap. A2 same-suit numerical journey: small to large = progression, large to small = restart, around 5 = crisis. A3 elemental dignities: Fire and Air support each other; Water and Earth support each other; Fire and Water evaporate; Air and Earth stagnate; Fire and Earth need grounding; Water and Air easily turn into emotional thinking. B1 major arcana numbers summing to 21 = mirrored tension. B2 court card = role, the other card = event. B3 same number in different suits = stage resonance.
 
-只输出结论，不写“不适用/跳过/不匹配”。
+Output conclusions only; never write "not applicable/skip/no match".

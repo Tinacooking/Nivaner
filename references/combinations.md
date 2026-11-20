@@ -1,3 +1,3 @@
-# 经典组合
+# Classic Combinations
 
-死神+星星=结束后的疗愈；高塔+星星=崩塌后重建；死神+审判=方向重估；月亮+太阳=幻象被照亮；恶魔+力量=驯化阴影；女祭司+魔术师=直觉与行动校时；隐士+恋人=独处影响连接；皇帝+命运之轮=控制被变化测试；正义+命运之轮=选择遇到时机回响；高塔+宝剑十=旧结构彻底结束。
+Death + Star = healing after an ending; Tower + Star = rebuilding after collapse; Death + Judgement = re-evaluating direction; Moon + Sun = illusion illuminated; Devil + Strength = taming the shadow; High Priestess + Magician = aligning intuition with action; Hermit + Lovers = solitude affects connection; Emperor + Wheel of Fortune = control tested by change; Justice + Wheel of Fortune = choices echoed by timing; Tower + Ten of Swords = old structures fully ended.

@@ -1,0 +1,6 @@
+kerykeion==6.1.0
+numpy
+bidict
+cn2an
+ephem
+lunar_python
