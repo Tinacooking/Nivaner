@@ -22,7 +22,7 @@ Every random draw accepts a seed, so a reading can be replayed exactly. Readings
 Requires Python 3.10+ (tested on 3.14), Node 22+ (tested on 25), and Git.
 
 ```bash
-git clone https://github.com/daman-ovo-0404/tarot-skill.git
+git clone https://github.com/Tinacooking/Nivaner.git
 cd tarot-skill
 
 # Upstream data and casting engine (vendor/ is not committed)
